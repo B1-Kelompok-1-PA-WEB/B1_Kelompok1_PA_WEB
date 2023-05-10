@@ -20,7 +20,7 @@
           <h1 class="display-4"><span class="font-weight-bold">WIRIJI RESTO</span></h1>
           <hr>
           <p class="lead font-weight-bold"><br> 
-          OUR GREAT MENU HERE</p>
+          OUR GREAT MENU HERE!</p>
         </div>
       </div>
   <!-- Akhir Jumbotron -->
