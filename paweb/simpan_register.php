@@ -15,10 +15,11 @@ $status=$_POST["status"];
 
 
 //Menginput data ke tabel
-  $hasil=mysqli_query($koneksi, "INSERT INTO user (username,password,nama_lengkap,jenis_kelamin,tanggal_lahir,alamat,hp,status) VALUES('$username','$password','$nama_lengkap','$jenis_kelamin','$tanggal_lahir','$alamat','$hp','user')");
+  $hasil=mysqli_query($koneksi, "INSERT INTO akun (username,password,status) VALUES('$username','$password','user')");
+  $hasil2=mysqli_query($koneksi, "INSERT INTO pembeli (nama_lengkap,jenis_kelamin,tanggal_lahir,alamat,hp) VALUES('$username','$password','$nama_lengkap','$jenis_kelamin','$tanggal_lahir','$alamat','$hp')");
 
 //Kondisi apakah berhasil atau tidak
-	if ($hasil) 
+	if ($hasil && hasil2) 
 	{
 		echo "<script>
 					alert('Anda Berhasil Registrasi !');
