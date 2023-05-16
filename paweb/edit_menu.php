@@ -18,8 +18,6 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/edit_menu.css">
-    <!-- <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 
     <title>Edit Menu</title>
   </head>
@@ -33,35 +31,36 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
         <div class="form-group">
           <label for="menu1">Nama Menu</label>
           <input type="hidden" name="id_menu" value="<?php echo $result[0]['id_menu'] ?>">
-          <input type="text" class="form-control" id="menu1" name="nama_menu" value="<?php echo $result[0]['nama_menu'] ?>">
+          <input type="text" class="form-control" id="menu1" name="nama_menu" value="<?php echo $result[0]['nama_menu'] ?>" required>
         </div>
         <div class="form-group">
           <label for="#">Jenis Menu</label>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="jenis_menu" value="Makanan">Makanan 
+              <input type="radio" class="form-check-input" name="jenis_menu" value="Makanan" required>Makanan 
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="Minuman" name="jenis_menu">Minuman
+              <input type="radio" class="form-check-input" value="Minuman" name="jenis_menu" required>Minuman
             </label>
           </div>
          </div>
         <div class="form-group">
           <label for="stok1">Stok</label>
-          <input type="text" class="form-control" id="stok1" name="stok" value="<?php echo $result[0]['stok'] ?>">
+          <input type="number" class="form-control" id="stok1" name="stok" value="<?php echo $result[0]['stok'] ?>" required>
         </div>
         <div class="form-group">
           <label for="harga1">Harga Menu</label>
-          <input type="text" class="form-control" id="harga1" name="harga" value="<?php echo $result[0]['harga'] ?>">
+          <input type="number" class="form-control" id="harga1" name="harga" value="<?php echo $result[0]['harga'] ?>" required>
         </div>
+        
         <div class="form-group">
           <label for="gambar">Foto Menu</label>
-          <input type="file" class="form-control-file border" id="gambar" name="gambar">
+          <input type="file" class="form-control-file border" id="gambar" name="gambar" required>
         </div><br>
         <button type="submit" class="btn btn-primary" name="tambah">Edit</button>
-        <button type="reset" class="btn btn-danger" name="reset">Hapus</button>
+        <a href="daftar_menu.php" style="text-decoration:none"><button type="button" class="btn btn-danger">Cancel</button></a>
   </div>
   </div>
   <!-- Akhir Form Registrasi --> 
