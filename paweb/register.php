@@ -55,8 +55,8 @@
           <input type="text" class="form-control" id="rumah" name="alamat" placeholder="Masukan Alamat" required >
         </div>
         <div class="form-group col-md-2">
-          <label for="telp">No. Telephone</label>
-          <input type="number" class="form-control" id="telp" name="hp" placeholder="No. Telephone" required>
+          <label for="telp">No. Telephone (+62)</label>
+          <input type="tel" class="form-control" id="telp" name="hp" placeholder="No. Telephone" pattern="[0-9]{12}" required>
         </div>
     </form>
   </div>
