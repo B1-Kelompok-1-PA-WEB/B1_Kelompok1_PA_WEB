@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 $id_menu = $_GET['id_menu'];
 
 if (isset($_SESSION['pesanan'][$id_menu]))

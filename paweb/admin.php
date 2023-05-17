@@ -4,7 +4,6 @@
         header("location: login.php");
       }else{
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>

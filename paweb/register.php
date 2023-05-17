@@ -37,11 +37,11 @@
       <div class="form-group">
         <label for="jk">Jenis Kelamin</label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk" value="Laki-Laki"required>
+          <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk" value="L"required>
           <label class="form-check-label" for="jk">Laki-Laki</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk" value="Perempuan"required>
+          <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk" value="P"required>
           <label class="form-check-label" for="jk">Perempuan</label>
         </div>
       </div>
@@ -56,7 +56,7 @@
         </div>
         <div class="form-group col-md-2">
           <label for="telp">No. Telephone</label>
-          <input type="text" class="form-control" id="telp" name="hp" placeholder="No. Telephone" required>
+          <input type="number" class="form-control" id="telp" name="hp" placeholder="No. Telephone" required>
         </div>
     </form>
   </div>

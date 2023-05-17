@@ -70,14 +70,14 @@
           <?php $nomor=1; ?>
           <?php $totalbelanja = 0; ?>
           <?php 
-              $ambil = $koneksi->query("SELECT * FROM pemesanan_produk JOIN produk ON pemesanan_produk.id_menu=produk.id_menu 
-                WHERE pemesanan_produk.id_pemesanan='$_GET[id]'");
+              $ambil = $koneksi->query("SELECT * FROM pemesanan_menu JOIN menu ON pemesanan_menu.id_menu=menu.id_menu 
+                WHERE pemesanan_menu.id_pesanan='$_GET[id]'");
            ?>
            <?php while ($pecah=$ambil->fetch_assoc()) { ?>
            <?php $subharga1=$pecah['harga']*$pecah['jumlah']; ?>
           <tr>
             <th scope="row"><?php echo $nomor; ?></th>
-            <td><?php echo $pecah['id_pemesanan_produk']; ?></td>
+            <td><?php echo $pecah['id_pemesanan']; ?></td>
             <td><?php echo $pecah['nama_menu']; ?></td>
             <td>Rp. <?php echo number_format($pecah['harga']); ?></td>
             <td><?php echo $pecah['jumlah']; ?></td>
