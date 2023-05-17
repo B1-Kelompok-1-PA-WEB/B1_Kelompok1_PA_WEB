@@ -18,7 +18,7 @@ if(!empty($nama)){
         if (preg_match($ekspresi_reguler, $stok)) {
             if (preg_match($ekspresi_reguler, $harga)) {
                 move_uploaded_file($source, $folder.$nama_file);
-                $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$nama_file')");
+                $insert = mysqli_query($koneksi, "INSERT INTO menu VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$nama_file')");
                 if($insert)
                     header('location: daftar_menu.php');
                 else

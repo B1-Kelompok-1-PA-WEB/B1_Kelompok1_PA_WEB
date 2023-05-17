@@ -57,7 +57,7 @@ include 'koneksi.php';
           $password = $_POST['password'];
 
           // Variabel memuat query untuk pengecekan login
-          $cek_data = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$user' AND password = '$password'");
+          $cek_data = mysqli_query($koneksi, "SELECT * FROM akun WHERE username = '$user' AND password = '$password'");
           $hasil = mysqli_fetch_array($cek_data);
           $status = $hasil['status'];
           $login_user = $hasil['username'];
@@ -70,9 +70,9 @@ include 'koneksi.php';
 
                 if ($status == 'admin') {
                   header('location: admin.php');
-                }elseif ($status == 'employee') {
+                }elseif ($status == 'staff') {
                   header('location: employee.php'); 
-                }elseif ($status == 'user') {
+                }elseif ($status == 'member') {
                   header('location: user.php'); 
                 }
             }else{

@@ -54,7 +54,7 @@
 
           <?php 
           include('koneksi.php');
-          $query = mysqli_query($koneksi, 'SELECT * FROM produk');
+          $query = mysqli_query($koneksi, 'SELECT * FROM menu');
           $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
           ?>
 

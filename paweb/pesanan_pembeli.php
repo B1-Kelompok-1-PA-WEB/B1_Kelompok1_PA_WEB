@@ -82,7 +82,7 @@ if(empty($_SESSION["pesanan"]) OR !isset($_SESSION["pesanan"]))
 
             <?php 
               include('koneksi.php');
-              $ambil = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_menu='$id_menu'");
+              $ambil = mysqli_query($koneksi, "SELECT * FROM menu WHERE id_menu='$id_menu'");
               $pecah = $ambil -> fetch_assoc();
               $subharga = $pecah["harga"]*$jumlah;
             ?>
@@ -124,7 +124,7 @@ if(empty($_SESSION["pesanan"]) OR !isset($_SESSION["pesanan"]))
           $tanggal_pemesanan=date("Y-m-d");
 
           // Menyimpan data ke tabel pemesanan
-          $insert = mysqli_query($koneksi, "INSERT INTO pemesanan (tanggal_pemesanan, total_belanja) VALUES ('$tanggal_pemesanan', '$totalbelanja')");
+          $insert = mysqli_query($koneksi, "INSERT INTO pesanan (tanggal_pemesanan, total_belanja) VALUES ('$tanggal_pemesanan', '$totalbelanja')");
 
           // Mendapatkan ID barusan
           $id_terbaru = $koneksi->insert_id;
@@ -132,7 +132,7 @@ if(empty($_SESSION["pesanan"]) OR !isset($_SESSION["pesanan"]))
           // Menyimpan data ke tabel pemesanan produk
           foreach ($_SESSION["pesanan"] as $id_menu => $jumlah)
           {
-            $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_produk (id_pemesanan, id_menu, jumlah) 
+            $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_menu (id_pesanan, id_menu, jumlah) 
               VALUES ('$id_terbaru', '$id_menu', '$jumlah') ");
           }          
 
