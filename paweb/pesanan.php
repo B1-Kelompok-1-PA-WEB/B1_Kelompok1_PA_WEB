@@ -67,6 +67,7 @@
           <tr>
             <th scope="col">No.</th>
             <th scope="col">ID Pesanan</th>
+            <th scope="col">ID Pelanggan</th>
             <th scope="col">Tanggal Pemesanan</th>
             <th scope="col">Total Pembayaran</th>
             <th scope="col">Opsi</th>
@@ -82,6 +83,7 @@
           <tr>
             <th scope="row"><?php echo $nomor; ?></th>
             <td><?php echo $result["id_pesanan"]; ?></td>
+            <td><?php echo $result["id_user"]; ?></td>
             <td><?php echo $result["tanggal_pemesanan"]; ?></td>
             <td>Rp. <?php echo number_format($result["total_belanja"]); ?></td>
             <td>

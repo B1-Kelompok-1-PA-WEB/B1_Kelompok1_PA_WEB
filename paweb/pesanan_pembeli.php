@@ -122,9 +122,9 @@ if(empty($_SESSION["pesanan"]) OR !isset($_SESSION["pesanan"]))
       <?php 
       if(isset($_POST['konfirm'])) {
           $tanggal_pemesanan=date("Y-m-d");
-
+          $idbeli = $_SESSION['idbeli'];
           // Menyimpan data ke tabel pemesanan
-          $insert = mysqli_query($koneksi, "INSERT INTO pesanan (tanggal_pemesanan, total_belanja) VALUES ('$tanggal_pemesanan', '$totalbelanja')");
+          $insert = mysqli_query($koneksi, "INSERT INTO pesanan (id_user, tanggal_pemesanan, total_belanja) VALUES ('$idbeli','$tanggal_pemesanan', '$totalbelanja')");
 
           // Mendapatkan ID barusan
           $id_terbaru = $koneksi->insert_id;
