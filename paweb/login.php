@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 include 'koneksi.php';
 ?>
 
@@ -61,6 +62,7 @@ include 'koneksi.php';
           $hasil = mysqli_fetch_array($cek_data);
           $status = $hasil['status'];
           $login_user = $hasil['username'];
+          $_SESSION['idbeli'] = $hasil['id_user'];
           $row = mysqli_num_rows($cek_data);
 
           // Pengecekan kondisi username dan password login

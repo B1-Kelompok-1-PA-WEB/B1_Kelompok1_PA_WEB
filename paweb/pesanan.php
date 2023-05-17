@@ -67,14 +67,17 @@
           <tr>
             <th scope="col">No.</th>
             <th scope="col">ID Pesanan</th>
+            <th scope="col">ID Pelanggan</th>
             <th scope="col">Tanggal Pemesanan</th>
             <th scope="col">Total Pembayaran</th>
+            <th scope="col">Status</th>
             <th scope="col">Opsi</th>
           </tr>
         </thead>
         <tbody>
           <?php $nomor=1; ?>
-          <?php 
+          <?php
+
             $ambil = mysqli_query($koneksi, 'SELECT * FROM pesanan');
             $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
           ?>
@@ -82,8 +85,10 @@
           <tr>
             <th scope="row"><?php echo $nomor; ?></th>
             <td><?php echo $result["id_pesanan"]; ?></td>
+            <td><?php echo $result["id_user"]; ?></td>
             <td><?php echo $result["tanggal_pemesanan"]; ?></td>
             <td>Rp. <?php echo number_format($result["total_belanja"]); ?></td>
+            <td><?php echo $result["status"]; ?></td>
             <td>
               <a href="detail_pesanan.php?id=<?php echo $result['id_pesanan'] ?>" class="badge badge-primary">Detail</a>
               <a href="clear_pesanan.php?id=<?php echo $result['id_pesanan'] ?>" class="badge badge-danger">Hapus Data</a>
