@@ -72,6 +72,7 @@
           <?php 
               $ambil = $koneksi->query("SELECT * FROM pemesanan_menu JOIN menu ON pemesanan_menu.id_menu=menu.id_menu 
                 WHERE pemesanan_menu.id_pesanan='$_GET[id]'");
+              $_SESSION['idpesanan'] = $_GET['id'];
            ?>
            <?php while ($pecah=$ambil->fetch_assoc()) { ?>
            <?php $subharga1=$pecah['harga']*$pecah['jumlah']; ?>
@@ -99,7 +100,7 @@
       
       <form method="POST" action="">
         <a href="pesanan.php" class="btn btn-success btn-sm">Kembali</a>
-        <button class="btn btn-primary btn-sm" name="bayar">Konfirmasi Pembayaran</button>
+        <a href='konfirmasi.php' class="btn btn-primary btn-sm" name="bayar">Konfirmasi Pembayaran</a>
       </form>  
       <?php 
         if(isset($_POST["bayar"]))
